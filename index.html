@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Information Chatbot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">₹</div>
+        <div><strong>LoanWise</strong><small>Loan Information Assistant</small></div>
+      </div>
+      <div class="online"><span></span> Assistant ready</div>
+    </header>
+
+    <section class="chat-card">
+      <section class="welcome" id="welcome">
+        <div class="hero-icon">₹</div>
+        <div class="eyebrow">YOUR PERSONAL LOAN GUIDE</div>
+        <h1>How can I help you<br><span>understand your loan?</span></h1>
+        <p>Ask questions about loan types, eligibility, documents, interest rates, and monthly EMI.</p>
+        <div class="suggestions">
+          <button class="suggestion" data-question="What types of loans are available?"><span class="suggestion-icon">▤</span><span><strong>Types of loans</strong><small>Explore common loan options</small></span><b>↗</b></button>
+          <button class="suggestion" data-question="How do loan interest rates work?"><span class="suggestion-icon">％</span><span><strong>Interest rates</strong><small>Understand how rates work</small></span><b>↗</b></button>
+          <button class="suggestion" data-question="What are the eligibility criteria?"><span class="suggestion-icon">✓</span><span><strong>Eligibility</strong><small>Learn what lenders consider</small></span><b>↗</b></button>
+          <button class="suggestion" data-question="How does EMI work?"><span class="suggestion-icon">▣</span><span><strong>EMI explained</strong><small>Understand monthly payments</small></span><b>↗</b></button>
+        </div>
+      </section>
+
+      <section class="chat-area" id="chatArea" aria-live="polite"></section>
+
+      <div class="composer-wrap">
+        <form class="composer" id="chatForm">
+          <textarea id="messageInput" rows="1" maxlength="1000" placeholder="Ask anything about loans..." aria-label="Your question"></textarea>
+          <button class="send-btn" type="submit" aria-label="Send message">➤</button>
+        </form>
+        <div class="composer-note">LoanWise can make mistakes. Confirm important details with your bank or lender.</div>
+      </div>
+    </section>
+    <footer class="page-footer">LoanWise · Simple, helpful loan information</footer>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
